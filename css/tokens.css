@@ -1,0 +1,82 @@
+/*
+  Tokens de El Burrito (prototipo). Origen de cada valor en DESIGN.md.
+  Ningún color, fuente, espacio o radio fuera de este archivo.
+*/
+@font-face {
+  font-family: "Big Shoulders Display";
+  src: url("../assets/fonts/big-shoulders-display.woff2") format("woff2");
+  font-weight: 700 900;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Archivo";
+  src: url("../assets/fonts/archivo.woff2") format("woff2");
+  font-weight: 400 700;
+  font-display: swap;
+}
+
+:root {
+  /* Marca: tomados del vector de la carta de tragos */
+  --color-fucsia: #e61b72;
+  /* Fucsia un poco más claro para fondos con texto: 5.0:1 con la tinta (el de marca da 4.2) */
+  --color-fucsia-fondo: #f2378a;
+  --color-amarillo: #ffde17;
+  --color-ladrillo: #9b2a1e;
+
+  /* Noche: negros cálidos de las fotos del local, nunca #000 */
+  --color-noche: #161214;
+  --color-noche-2: #221b1e;
+  --color-noche-3: #2e2428;
+  --color-linea: #4a3d42;
+  --color-papel: #f6f1ea;
+  --color-papel-suave: #cfc4bb;
+  --color-tinta: #161214;
+  --color-blanco: #fffdf9;
+  --color-velo: rgb(22 18 20 / 0.84);
+
+  /* Estados */
+  --color-error: #ffb4a8;
+  --color-error-claro: #8a1a10;
+  --color-ok: #b8f0a0;
+
+  --font-display: "Big Shoulders Display", "Arial Narrow", sans-serif;
+  --font-body: "Archivo", "Helvetica Neue", Arial, sans-serif;
+
+  --text-xs: 0.8125rem;
+  --text-sm: 0.9375rem;
+  --text-base: 1.0625rem;
+  --text-lg: 1.25rem;
+  --text-xl: clamp(1.5rem, 1.2rem + 1.2vw, 2rem);
+  --text-2xl: clamp(2.25rem, 1.6rem + 3vw, 3.5rem);
+  --text-3xl: clamp(3.25rem, 2rem + 6vw, 6.5rem);
+  --text-dia: clamp(4.5rem, 3rem + 7vw, 9rem);
+  --text-noche-dia: clamp(3rem, 1.6rem + 4vw, 4.75rem);
+
+  --lh-display: 1.02;
+  --lh-body: 1.55;
+
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-20: 5rem;
+  --space-24: 6rem;
+
+  --radio-s: 4px;
+  --radio-m: 8px;
+  --borde-grueso: 3px;
+
+  --sombra-cartel: 6px 6px 0 var(--color-tinta);
+
+  --ancho-max: 72rem;
+  --alto-banda: 3.5rem;
+  --alto-control: 3rem;
+
+  --z-banda: 300;
+}

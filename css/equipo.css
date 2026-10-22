@@ -1,0 +1,45 @@
+/* Vista del equipo (prototipo). Solo tokens. */
+.equipo .banda__logo { width: 5rem; margin-bottom: calc(-1 * var(--space-6)); }
+.equipo__rol {
+  margin-left: auto;
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: var(--text-lg);
+  text-transform: uppercase;
+}
+.equipo__main { max-width: 52rem; margin: 0 auto; padding: var(--space-12) var(--space-4) var(--space-16); display: grid; gap: var(--space-6); }
+.equipo__aviso { color: var(--color-papel-suave); font-size: var(--text-sm); max-width: 60ch; }
+
+.noche-equipo {
+  background: var(--color-papel);
+  color: var(--color-tinta);
+  border: var(--borde-grueso) solid var(--color-tinta);
+  border-radius: var(--radio-s);
+  padding: var(--space-5);
+  display: grid;
+  gap: var(--space-4);
+}
+.noche-equipo { --tono: var(--color-papel); }
+.noche-equipo--amarillo { --tono: var(--color-amarillo); }
+.noche-equipo--fucsia { --tono: var(--color-fucsia); }
+.noche-equipo--ladrillo { --tono: var(--color-ladrillo); }
+.noche-equipo__titulo::before { content: ""; display: inline-block; width: 0.8em; height: 0.8em; margin-right: var(--space-2); background: var(--tono); border: 2px solid var(--color-tinta); vertical-align: -0.05em; }
+.noche-equipo :focus-visible { outline-color: var(--color-fucsia); }
+.noche-equipo__cabecera { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-2) var(--space-6); }
+.noche-equipo__titulo { font-family: var(--font-display); font-weight: 900; font-size: var(--text-xl); text-transform: uppercase; line-height: 1.05; flex: 1 1 18rem; }
+.noche-equipo__titulo::first-letter { text-transform: uppercase; }
+.noche-equipo__resumen { font-weight: 700; }
+.noche-equipo__cerrada { font-weight: 700; color: var(--color-error-claro); }
+.noche-equipo__vacia { color: var(--color-linea); }
+
+.reservas { list-style: none; margin: 0; padding: 0; display: grid; }
+.reserva { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--space-3); padding: var(--space-4) 0; border-top: 2px solid var(--color-tinta); }
+.reserva__nombre { font-weight: 700; }
+.reserva__extra { font-size: var(--text-sm); }
+.reserva__estado { display: inline-block; margin-top: var(--space-1); font-size: var(--text-xs); font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; }
+.reserva--confirmada .reserva__estado { background: var(--color-amarillo); padding: 0 var(--space-2); }
+.reserva--rechazada { opacity: 0.6; }
+.reserva--rechazada .reserva__nombre { text-decoration: line-through; }
+.reserva__acciones { display: flex; flex-wrap: wrap; gap: var(--space-2); }
+.reserva__acciones .boton { min-height: 2.75rem; font-size: var(--text-base); padding: 0 var(--space-4); }
+.reserva__acciones .boton--borde:hover { background: var(--color-amarillo); }

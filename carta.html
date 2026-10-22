@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Carta · El Burrito · Discoteca en Lince</title>
+  <meta name="description" content="Carta de El Burrito: tragos de autor, cócteles, clásicos, sin alcohol y piqueos, con precios en soles.">
+  <meta name="theme-color" content="#161214">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="preload" href="assets/fonts/big-shoulders-display.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/sitio.css">
+  <link rel="icon" href="assets/logo-el-burrito.svg" type="image/svg+xml">
+</head>
+<body class="pagina-carta">
+  <a class="saltar" href="#contenido">Saltar al contenido</a>
+
+  <header class="banda" role="banner">
+    <div class="banda__interior">
+      <a class="banda__logo" href="index.html" aria-label="El Burrito, inicio">
+        <img src="assets/logo-el-burrito.svg" alt="" width="165" height="170">
+      </a>
+      <nav class="banda__nav" aria-label="Secciones">
+        <a href="index.html#noches">Noches</a>
+        <a href="carta.html" aria-current="page">Carta</a>
+        <a href="index.html#llegar">Cómo llegar</a>
+      </nav>
+      <a class="boton boton--tinta banda__reservar" href="index.html#reservar">Reservar</a>
+    </div>
+  </header>
+
+  <main id="contenido">
+    <section class="carta" id="carta" aria-labelledby="carta-titulo">
+      <div class="carta__cabecera">
+        <h1 class="seccion-titulo" id="carta-titulo">La carta</h1>
+        <div class="pestanas" role="tablist" aria-label="Cartas">
+          <button class="pestana" type="button" role="tab" id="pestana-tragos" aria-controls="panel-tragos" aria-selected="true">Tragos</button>
+          <button class="pestana" type="button" role="tab" id="pestana-piqueos" aria-controls="panel-piqueos" aria-selected="false" tabindex="-1">Piqueos</button>
+        </div>
+      </div>
+      <div class="carta__panel" id="panel-tragos" role="tabpanel" aria-labelledby="pestana-tragos" data-panel="tragos"></div>
+      <div class="carta__panel" id="panel-piqueos" role="tabpanel" aria-labelledby="pestana-piqueos" data-panel="piqueos" hidden></div>
+      <p class="carta__pie">Precios en soles. <a data-carta-pdf href="#" target="_blank" rel="noopener">Ver las cartas en PDF</a></p>
+    </section>
+    <aside class="cierre-carta" aria-label="Reservar">
+      <p class="cierre-carta__texto">¿Ya sabes qué vas a pedir?</p>
+      <a class="boton boton--marca" href="index.html#reservar">Reservar mesa</a>
+    </aside>
+  </main>
+
+  <div class="flotante" data-flotante>
+    <a class="boton boton--tinta" href="index.html#reservar">Reservar mesa</a>
+  </div>
+
+  <footer class="pie">
+    <p class="pie__ley">Tomar bebidas alcohólicas en exceso es dañino</p>
+    <div class="pie__fila">
+      <img class="pie__logo" src="assets/logo-el-burrito.svg" alt="El Burrito" width="82" height="85">
+      <p class="pie__lema" data-lema></p>
+      <ul class="pie__enlaces">
+        <li><a href="index.html#libro">Libro de Reclamaciones</a></li>
+        <li><a href="index.html#privacidad">Política de privacidad</a></li>
+      </ul>
+    </div>
+    <p class="pie__prototipo">Prototipo para revisión. Las reservas de esta demo se guardan solo en este navegador. <a href="equipo.html">Ver la vista del equipo</a></p>
+  </footer>
+
+  <script src="contenido/sitio.js"></script>
+  <script src="js/dom.js"></script>
+  <script src="js/carta.js"></script>
+</body>
+</html>

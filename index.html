@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>El Burrito · Discoteca en Lince · Reservas</title>
+  <meta name="description" content="Discoteca El Burrito en el C.C. Risso, Lince. Una noche distinta de miércoles a sábado: rock de los 80, noche de amigas, orquesta en vivo y pachanga. Reserva en línea.">
+  <meta name="theme-color" content="#161214">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="preload" href="assets/fonts/big-shoulders-display.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/sitio.css">
+  <link rel="icon" href="assets/logo-el-burrito.svg" type="image/svg+xml">
+</head>
+<body>
+  <a class="saltar" href="#contenido">Saltar al contenido</a>
+
+  <header class="banda" role="banner">
+    <div class="banda__interior">
+      <a class="banda__logo" href="#hoy" aria-label="El Burrito, inicio">
+        <img src="assets/logo-el-burrito.svg" alt="" width="165" height="170">
+      </a>
+      <nav class="banda__nav" aria-label="Secciones">
+        <a href="#noches">Noches</a>
+        <a href="carta.html">Carta</a>
+        <a href="#llegar">Cómo llegar</a>
+      </nav>
+      <a class="boton boton--tinta banda__reservar" href="#reservar">Reservar</a>
+    </div>
+  </header>
+
+  <main id="contenido">
+    <section class="hoy" id="hoy" aria-labelledby="hoy-titulo">
+      <div class="hoy__texto">
+        <p class="hoy__fecha" data-hoy-fecha></p>
+        <h1 class="hoy__titulo" id="hoy-titulo" data-hoy-nombre>El Burrito</h1>
+        <p class="hoy__genero" data-hoy-genero></p>
+        <p class="hoy__desc" data-hoy-desc></p>
+        <div class="hoy__acciones">
+          <a class="boton boton--marca" href="#reservar" data-hoy-reservar>Reservar mesa</a>
+          <a class="boton boton--borde" href="carta.html">Ver la carta</a>
+        </div>
+        <p class="hoy__lugar"><span data-dato="referencia"></span>, <span data-dato="direccion"></span>. <span data-dato="horario"></span></p>
+      </div>
+      <figure class="hoy__foto">
+        <img data-hoy-foto src="assets/img/baile.jpg" alt="" width="360" height="640" fetchpriority="high">
+      </figure>
+    </section>
+
+    <aside class="evento" data-evento hidden aria-label="Evento especial">
+      <p class="evento__fecha" data-evento-fecha></p>
+      <div>
+        <h2 class="evento__titulo" data-evento-titulo></h2>
+        <p class="evento__detalle" data-evento-detalle></p>
+      </div>
+      <a class="boton boton--tinta" href="#reservar" data-evento-reservar>Reservar esa noche</a>
+    </aside>
+
+    <section class="noches" id="noches" aria-labelledby="noches-titulo">
+      <h2 class="seccion-titulo" id="noches-titulo">Una noche distinta de miércoles a sábado</h2>
+      <div class="noches__lista" data-noches></div>
+    </section>
+
+    <section class="reservar" id="reservar" aria-labelledby="reservar-titulo">
+      <div class="reservar__caja">
+        <h2 class="seccion-titulo" id="reservar-titulo">Reserva tu mesa</h2>
+        <p class="reservar__intro">Elige la noche y cuántos vienen. El equipo de El Burrito te confirma al celular.</p>
+
+        <form class="form" data-form novalidate>
+          <fieldset class="campo">
+            <legend class="campo__etiqueta">¿Qué noche?</legend>
+            <div class="chips" data-chips></div>
+            <p class="campo__error" id="error-noche" data-error="noche"></p>
+          </fieldset>
+
+          <div class="campo">
+            <label class="campo__etiqueta" for="personas">¿Cuántos vienen?</label>
+            <div class="contador">
+              <button class="contador__boton" type="button" data-restar aria-label="Una persona menos">&minus;</button>
+              <input class="control contador__numero" id="personas" name="personas" type="number" inputmode="numeric" min="1" value="4" aria-describedby="error-personas">
+              <button class="contador__boton" type="button" data-sumar aria-label="Una persona más">+</button>
+            </div>
+            <p class="campo__error" id="error-personas" data-error="personas"></p>
+          </div>
+
+          <div class="form__fila">
+            <div class="campo">
+              <label class="campo__etiqueta" for="nombre">Nombre</label>
+              <input class="control" id="nombre" name="nombre" type="text" autocomplete="name" aria-describedby="error-nombre">
+              <p class="campo__error" id="error-nombre" data-error="nombre"></p>
+            </div>
+            <div class="campo">
+              <label class="campo__etiqueta" for="celular">Celular</label>
+              <input class="control" id="celular" name="celular" type="tel" inputmode="tel" autocomplete="tel-national" placeholder="9XX XXX XXX" aria-describedby="error-celular">
+              <p class="campo__error" id="error-celular" data-error="celular"></p>
+            </div>
+          </div>
+
+          <div class="campo">
+            <label class="campo__etiqueta" for="motivo">¿Celebran algo?</label>
+            <select class="control" id="motivo" name="motivo">
+              <option value="">Nada en especial</option>
+              <option value="cumpleanos">Cumpleaños</option>
+              <option value="otro">Otra celebración</option>
+            </select>
+            <p class="campo__ayuda" data-ayuda-cumple hidden>Los cumpleañeros tienen premio. Te lo contamos al confirmar.</p>
+          </div>
+
+          <div class="campo campo--checks">
+            <label class="check">
+              <input type="checkbox" name="acepto" aria-describedby="error-acepto">
+              <span>Acepto que El Burrito use mis datos solo para gestionar esta reserva. <a href="#privacidad">Política de privacidad</a></span>
+            </label>
+            <p class="campo__error" id="error-acepto" data-error="acepto"></p>
+            <label class="check">
+              <input type="checkbox" name="promos">
+              <span>Quiero recibir promociones de El Burrito (opcional)</span>
+            </label>
+          </div>
+
+          <button class="boton boton--marca boton--ancho" type="submit" data-enviar>Enviar reserva</button>
+          <p class="form__estado" data-estado role="status" aria-live="polite"></p>
+        </form>
+
+        <div class="recibida" data-recibida hidden tabindex="-1">
+          <p class="recibida__sello">Reserva recibida</p>
+          <h3 class="recibida__titulo" data-recibida-titulo></h3>
+          <dl class="recibida__datos" data-recibida-datos></dl>
+          <p class="recibida__nota">Está <strong>por confirmar</strong>. El equipo te escribe al <span data-recibida-celular></span> antes de la noche.</p>
+          <button class="boton boton--borde" type="button" data-otra>Hacer otra reserva</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="acceso-carta" aria-labelledby="acceso-carta-titulo">
+      <h2 class="seccion-titulo" id="acceso-carta-titulo">La carta</h2>
+      <p class="acceso-carta__texto">Tragos de autor en su vaso de colección, cócteles, clásicos y piqueos para compartir.</p>
+      <div class="acceso-carta__botones">
+        <a class="boton boton--marca" href="carta.html#tragos">Ver tragos</a>
+        <a class="boton boton--borde" href="carta.html#piqueos">Ver piqueos</a>
+      </div>
+    </section>
+
+    <section class="llegar" id="llegar" aria-labelledby="llegar-titulo">
+      <div class="llegar__datos">
+        <h2 class="seccion-titulo" id="llegar-titulo">Cómo llegar</h2>
+        <p class="llegar__direccion"><span data-dato="direccion"></span><br><span data-dato="referencia"></span></p>
+        <p data-dato="horario"></p>
+        <ul class="llegar__enlaces">
+          <li><a class="enlace-flecha" data-mapa href="#" target="_blank" rel="noopener">Abrir en Google Maps</a></li>
+          <li><a class="enlace-flecha" data-telefono href="#">Llamar al <span data-dato="telefono"></span></a></li>
+          <li><a class="enlace-flecha" data-instagram href="#" target="_blank" rel="noopener">Instagram @elburrito.pe</a></li>
+        </ul>
+      </div>
+      <div class="preguntas">
+        <h2 class="preguntas__titulo">Antes de venir</h2>
+        <div data-preguntas></div>
+      </div>
+    </section>
+  </main>
+
+  <div class="flotante" data-flotante>
+    <a class="boton boton--tinta" href="#reservar">Reservar</a>
+  </div>
+
+  <footer class="pie">
+    <p class="pie__ley">Tomar bebidas alcohólicas en exceso es dañino</p>
+    <div class="pie__fila">
+      <img class="pie__logo" src="assets/logo-el-burrito.svg" alt="El Burrito" width="82" height="85">
+      <p class="pie__lema" data-lema></p>
+      <ul class="pie__enlaces">
+        <li><a href="#libro">Libro de Reclamaciones</a></li>
+        <li><a href="#privacidad" id="privacidad">Política de privacidad</a></li>
+      </ul>
+    </div>
+    <p class="pie__prototipo">Prototipo para revisión. Las reservas de esta demo se guardan solo en este navegador. <a href="equipo.html">Ver la vista del equipo</a></p>
+  </footer>
+
+  <script src="contenido/sitio.js"></script>
+  <script src="js/dom.js"></script>
+  <script src="js/fechas.js"></script>
+  <script src="js/reservas.js"></script>
+  <script src="js/sitio.js"></script>
+</body>
+</html>
