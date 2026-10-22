@@ -145,7 +145,6 @@ body[data-tono-hoy="blanco"] { --tono: var(--color-papel); }
 .hoy__texto { display: grid; gap: var(--space-4); align-content: start; }
 /* Reserva espacio para el texto que pinta sitio.js y evita saltos al cargar */
 .hoy__fecha { min-height: 1.9rem; }
-.hoy__titulo { min-height: calc(2 * var(--lh-display) * 1em); }
 .hoy__genero { min-height: 1.1em; }
 .hoy__desc { min-height: calc(3 * var(--lh-body) * 1em); }
 p, li { text-wrap: pretty; }
