@@ -8,6 +8,17 @@
   font-weight: 700 900;
   font-display: swap;
 }
+/* Respaldo del mismo ancho que Big Shoulders mientras carga (medido en Chrome): evita que los títulos salten.
+   Arial, Helvetica y Roboto tienen anchos parecidos; cubren Windows, Mac e iPhone, y Android. */
+@font-face {
+  font-family: "Big Shoulders respaldo";
+  src: local("Arial Bold"), local("Arial-BoldMT"), local("Helvetica Bold"), local("Helvetica-Bold"), local("Roboto Bold"), local("Roboto-Bold"), local("Arial");
+  font-weight: 700 900;
+  size-adjust: 68%;
+  ascent-override: 98%;
+  descent-override: 21%;
+  line-gap-override: 0%;
+}
 @font-face {
   font-family: "Archivo";
   src: url("../assets/fonts/archivo.woff2") format("woff2");
@@ -39,7 +50,7 @@
   --color-error-claro: #8a1a10;
   --color-ok: #b8f0a0;
 
-  --font-display: "Big Shoulders Display", "Arial Narrow", sans-serif;
+  --font-display: "Big Shoulders Display", "Big Shoulders respaldo", sans-serif;
   --font-body: "Archivo", "Helvetica Neue", Arial, sans-serif;
 
   --text-xs: 0.8125rem;
