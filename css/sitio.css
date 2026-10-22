@@ -167,7 +167,7 @@ p, li { text-wrap: pretty; }
 .hoy__desc { max-width: 38ch; font-size: var(--text-lg); }
 .hoy__acciones { display: flex; flex-wrap: wrap; gap: var(--space-3); padding-top: var(--space-2); }
 .hoy__acciones .boton--borde { color: var(--color-papel); border-color: var(--color-papel); }
-.hoy__lugar { color: var(--color-papel-suave); font-size: var(--text-sm); max-width: 45ch; }
+.hoy__lugar { color: var(--color-papel-suave); font-size: var(--text-sm); max-width: 45ch; min-height: 3lh; }
 .hoy__foto img {
   width: 100%;
   aspect-ratio: 4 / 5;
