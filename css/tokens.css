@@ -19,6 +19,15 @@
   descent-override: 21%;
   line-gap-override: 0%;
 }
+/* Respaldo del mismo ancho que Archivo mientras carga */
+@font-face {
+  font-family: "Archivo respaldo";
+  src: local("Arial"), local("ArialMT"), local("Helvetica"), local("Roboto");
+  size-adjust: 98%;
+  ascent-override: 88%;
+  descent-override: 21%;
+  line-gap-override: 0%;
+}
 @font-face {
   font-family: "Archivo";
   src: url("../assets/fonts/archivo.woff2") format("woff2");
@@ -51,7 +60,7 @@
   --color-ok: #b8f0a0;
 
   --font-display: "Big Shoulders Display", "Big Shoulders respaldo", sans-serif;
-  --font-body: "Archivo", "Helvetica Neue", Arial, sans-serif;
+  --font-body: "Archivo", "Archivo respaldo", Arial, sans-serif;
 
   --text-xs: 0.8125rem;
   --text-sm: 0.9375rem;
