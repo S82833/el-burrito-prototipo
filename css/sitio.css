@@ -614,3 +614,44 @@ select.control { appearance: auto; }
   .boton, .contador__boton { transition: none; }
   .boton:active, .contador__boton:active { transform: none; }
 }
+
+/* ---------- Celular: noches con foto en franja y secciones más juntas ---------- */
+.noche__etiqueta { display: none; }
+@media (max-width: 47.99rem) {
+  .noche { padding: 0 0 var(--space-8); gap: 0; }
+  .noche__fecha { display: none; }
+  .noche__foto { order: -1; position: relative; max-width: none; border-bottom: var(--borde-grueso) solid var(--color-tinta); }
+  .noche__foto img {
+    aspect-ratio: 16 / 9;
+    object-position: center 35%;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+  }
+  .noche__etiqueta {
+    display: inline-block;
+    position: absolute;
+    left: var(--space-4);
+    bottom: calc(-1 * var(--space-5));
+    background: var(--fondo);
+    color: var(--texto);
+    border: var(--borde-grueso) solid var(--color-tinta);
+    box-shadow: 4px 4px 0 var(--color-tinta);
+    padding: var(--space-2) var(--space-3);
+    font-family: var(--font-display);
+    font-weight: 900;
+    font-size: var(--text-lg);
+    text-transform: uppercase;
+    line-height: 1;
+  }
+  .noche__texto { gap: var(--space-2); padding: var(--space-10) var(--space-4) 0; }
+  .noche__texto .boton { margin-top: var(--space-2); }
+
+  /* De 64 a 40 px entre secciones */
+  .hoy { padding-block: var(--space-10); gap: var(--space-8); }
+  .hoy__foto img { aspect-ratio: 16 / 10; object-position: center 30%; }
+  .noches > .seccion-titulo { padding-top: var(--space-10); padding-bottom: var(--space-6); }
+  .reservar { padding-block: var(--space-10) var(--space-12); }
+  .acceso-carta, .carta, .llegar { padding-block: var(--space-10); }
+  .llegar { gap: var(--space-8); }
+}

@@ -62,7 +62,11 @@
           el("p", { clase: "noche__publico", texto: n.publico }),
           enlace
         ]),
-        el("figure", { clase: "noche__foto" }, el("img", { src: n.foto, alt: n.fotoAlt, loading: "lazy", width: "512", height: "640" }))
+        el("figure", { clase: "noche__foto" }, [
+          el("img", { src: n.foto, alt: n.fotoAlt, loading: "lazy", width: "512", height: "640" }),
+          /* Solo en celular: el día va como etiqueta montada sobre la foto */
+          el("p", { clase: "noche__etiqueta", texto: `Todos los ${n.diaPlural.toLowerCase()}` })
+        ])
       ]);
       lista.append(articulo);
     });
